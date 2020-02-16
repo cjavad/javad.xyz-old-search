@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="js/levenshteinenator.js"></script>
+    <script src="js/index.js"></script>
+    <title>Dynamic search using string distance</title>
+    <style>
+        input[type="search"] {
+            width: 20%;
+            font-size: large;
+        }
+        
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .searchable {
+            outline-style: ridge;
+            outline-width: thick;
+            width: 20%;
+            float: left;
+            margin: 20px;
+        }
+        
+        .searchable h3 {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <input id="search" type="search" name="search" placeholder="Start typing..."></input>
+        </div>
+        <div id="list" class="row">
+            <div class="searchable">
+                <h3>Ginger Hendrick</h3>
+            </div>
+            <div class="searchable">
+                <h3>
+                    Mammie Azar</h3>
+            </div>
+            <div class="searchable">
+                <h3>Logan Viles</h3>
+            </div>
+            <div class="searchable">
+                <h3>
+                    Lucila Chon</h3>
+            </div>
+            <div class="searchable">
+                <h3>Roscoe Stelzer</h3>
+            </div>
+            <div class="searchable">
+                <h3>Zenobia Harner</h3>
+            </div>
+            <div class="searchable">
+                <h3>Quyen Olson
+                </h3>
+            </div>
+            <div class="searchable">
+                <h3>Neomi Creasman</h3>
+            </div>
+            <div class="searchable">
+                <h3>Santina Bossert</h3>
+            </div>
+            <div class="searchable">
+                <h3>Cristina Keele</h3>
+            </div>
+            <div class="searchable">
+                <h3>Tomasa Leday
+                </h3>
+            </div>
+            <div class="searchable">
+                <h3>Michelle Witt</h3>
+            </div>
+            <div class="searchable">
+                <h3>Bernard Roque</h3>
+            </div>
+            <div class="searchable">
+                <h3>Oda Aranda</h3>
+            </div>
+            <div class="searchable">
+                <h3>Martine Sainz</h3>
+            </div>
+            <div class="searchable">
+                <h3>Ghislaine Spaeth</h3>
+            </div>
+            <div class="searchable">
+                <h3>Somer Linehan</h3>
+            </div>
+            <div class="searchable">
+                <h3>Daine Bellis
+                </h3>
+            </div>
+            <div class="searchable">
+                <h3>
+                    Debra Przybylski</h3>
+            </div>
+            <div class="searchable">
+                <h3>Ferne Harvill</h3>
+            </div>
+            <div class="searchable">
+                <h3>Harris Stallworth</h3>
+            </div>
+            <div class="searchable">
+                <h3>
+                    Major Blackshire</h3>
+            </div>
+            <div class="searchable">
+                <h3>Margarite Mcmurtrie</h3>
+            </div>
+            <div class="searchable">
+                <h3>
+                    Mirian Carlo</h3>
+            </div>
+
+            <div class="searchable">
+                <h3>Evon Dunstan</h3>
+            </div>
+            <div class="searchable">
+                <h3>Ross Aguiniga
+                </h3>
+            </div>
+
+            <div class="searchable">
+                <h3>
+                    Miranda Ding
+                </h3>
+            </div>
+
+            <div class="searchable">
+                <h3>
+                    Magdalene Christon
+                </h3>
+            </div>
+
+            <div class="searchable">
+                <h3>
+                    Tyson Mcgurk
+                </h3>
+            </div>
+
+            <div class="searchable">
+
+                <h3>Sheri Steelman
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Charmain Droz
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Larraine Leland
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Kera Egerton
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Takisha Garibay
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Geralyn Boswell
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Timika Begum
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Kara Saito
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Barry Marcano
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Kendrick Wang
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Maudie Hukill
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Lindsy Roseboro
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Maranda Leiker
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Minna Borth
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Dalila Harte
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Delma Larabee
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Fausto Ensminger
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Gilberto Tewksbury
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Lorenzo Gammon
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+
+                <h3>Quiana Deeds
+                </h3>
+
+            </div>
+
+            <div class="searchable">
+                <h3>Enriqueta
+                </h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
